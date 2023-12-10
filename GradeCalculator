@@ -1,0 +1,92 @@
+import java.util.*;
+
+public class gradeCalculator {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("WelCome To The Student Grade.");
+
+        System.out.print("Enter your name: ");
+        String name = sc.nextLine();
+
+        System.out.println("Enter your Computer Science grade: ");
+        double gradeCS = sc.nextDouble();
+
+        if (gradeCS >= 90 && gradeCS <= 100) {
+            System.out.println("A Grade ");
+        } else if (gradeCS >= 75 && gradeCS < 90) {
+            System.out.println("B Grade ");
+        } else if (gradeCS >= 60 && gradeCS < 75) {
+            System.out.println("C Grade ");
+        } else if (gradeCS >= 45 && gradeCS < 60) {
+            System.out.println("D Grade");
+        } else if (gradeCS < 45) {
+            System.out.println("F Grade ");
+        } else if (gradeCS > 100) {
+            System.out.println("Invalide number !. please Try Again.");
+
+        }
+
+        System.out.println("Enter your mathematics grade: ");
+        double gradesMth = sc.nextDouble();
+        if (gradesMth >= 90 && gradesMth <= 100) {
+            System.out.println("A Grade ");
+        } else if (gradesMth >= 75 && gradeCS < 90) {
+            System.out.println("B Grade ");
+        } else if (gradesMth >= 60 && gradeCS < 75) {
+            System.out.println("C Grade ");
+        } else if (gradesMth >= 45 && gradeCS < 60) {
+            System.out.println("D Grade");
+        } else if (gradesMth < 45) {
+            System.out.println("F Grade ");
+        } else if (gradesMth > 100) {
+            System.out.println("Invalide number !. please Try Again.");
+
+        }
+
+        System.out.println("Enter your panting grade: ");
+        double gradePtg = sc.nextDouble();
+        if (gradePtg >= 90 && gradePtg <= 100) {
+            System.out.println("A Grade ");
+        } else if (gradePtg >= 75 && gradeCS < 90) {
+            System.out.println("B Grade ");
+        } else if (gradePtg >= 60 && gradeCS < 75) {
+            System.out.println("C Grade ");
+        } else if (gradePtg >= 45 && gradeCS < 60) {
+            System.out.println("D Grade");
+        } else if (gradePtg < 45) {
+            System.out.println("F Grade ");
+        } else if (gradePtg > 100) {
+            System.out.println("Invalide number !. please Try Again.");
+
+        }
+
+        System.out.println("Enter your writing grade: ");
+        double gradeWrg = sc.nextDouble();
+        if (gradeWrg >= 90 && gradeWrg <= 100) {
+            System.out.println("A Grade ");
+        } else if (gradeWrg >= 75 && gradeCS < 90) {
+            System.out.println("B Grade ");
+        } else if (gradeWrg >= 60 && gradeCS < 75) {
+            System.out.println("C Grade ");
+        } else if (gradeWrg >= 45 && gradeCS < 60) {
+            System.out.println("D Grade");
+        } else if (gradeWrg < 45) {
+            System.out.println("F Grade ");
+        } else if (gradeWrg > 100) {
+            System.out.println("Invalide number !. please Try Again.");
+
+        }
+
+        double average = (gradeCS + gradesMth + gradePtg + gradeWrg) / 4;
+        System.out.println("The average grade of " + name + " is " + average);
+
+        if (average >= 45) {
+            System.out.println(name + " you are Pass. ");
+        } else {
+            System.out.println(name + " Sorry! you are Fail. ");
+            System.out.println(" Try Again.");
+        }
+
+    }
+}
