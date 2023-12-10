@@ -1,0 +1,124 @@
+import java.util.HashMap;
+
+import java.util.Scanner;
+
+public class ATM_machine {
+    public static void main(String[] args) {
+        ATMop obj = new ATMop();
+    }
+}
+
+class data {
+    float balance;
+
+}
+
+class ATMop {
+    Scanner sc = new Scanner(System.in);
+
+    float balance;
+    HashMap<Integer, data> map = new HashMap<>();
+
+    ATMop() {
+        System.out.println("*******************************");
+        System.out.println("WellCome to our ATM....");
+        AnotherAcount();
+    }
+
+    public void AnotherAcount() {
+        System.out.println("Enter your pin code: ");
+        int pincode = sc.nextInt();
+
+        if (map.containsKey(pincode) == true) {
+            data obj = map.get(pincode);
+            menu(obj);
+
+        } else {
+            System.out.println("*********************************************");
+            System.out.println("please create account first !");
+            System.out.println("set you pin code : ");
+
+            int pin = sc.nextInt();
+            data obj = new data();
+            map.put(pin, obj);
+            menu(obj);
+
+        }
+
+    }
+
+    public void menu(data obj) {
+        System.out.println("****************************************");
+        System.out.println("Please enter valid number: ");
+
+        System.out.println("1. check balance: ");
+        System.out.println("2. Deposite balance: ");
+        System.out.println("3. withdraw balance: ");
+        System.out.println("4. Check another account: ");
+        System.out.println("5. Exit: ");
+
+        int x = sc.nextInt();
+
+        if (x == 1) {
+            checkBalance(obj);
+        }
+
+        else if (x == 2) {
+            deposite(obj);
+            ;
+        }
+
+        else if (x == 3) {
+            withdraw(obj);
+        }
+
+        else if (x == 4) {
+            AnotherAcount();
+        }
+
+        else if (x == 5) {
+            System.out.println("Thank you !");
+
+        }
+
+        else {
+            System.out.println("Invalide number ! , Please enter valide number.");
+            menu(obj);
+
+        }
+
+    }
+
+    public void checkBalance(data obj) {
+        System.out.println("Your balance: " + obj.balance);
+        menu(obj);
+
+    }
+
+    public void deposite(data obj) {
+        System.out.println("Enter your amount: ");
+        float a = sc.nextFloat();
+
+        obj.balance += a;
+        System.out.println("Amount deposited successful ! ");
+        menu(obj);
+
+    }
+
+    public void withdraw(data obj) {
+        System.out.println("Enter your amount: ");
+        float a = sc.nextFloat();
+        if (obj.balance >= a) {
+            obj.balance = obj.balance - a;
+            System.out.println("amount withdraw successfully!");
+        } else {
+            System.out.println("Not sufficiante balance in your account");
+        }
+
+        obj.balance = obj.balance - a;
+        System.out.println("Amount withdraw sucsessfuly ! ");
+        menu(obj);
+
+    }
+
+}
